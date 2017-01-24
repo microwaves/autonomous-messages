@@ -45,22 +45,16 @@ function exportKey(key) {
 }
 
 // Imports a given private or public key.
-function importKey(key) {
+function importKey(key, usage) {
 	return this.crypto.subtle.importKey(
 		"jwk",
-		{
-			kty: "RSA",
-			e: "AQAB",
-			n: key,
-			alg: "RSA-OAEP-256",
-			ext: true,
-		},
+		key,
 		{
 			name: "RSA-OAEP",
 			hash: { name: "SHA-256" },
 		},
 		false,
-		["encrypt"]
+		[usage]
 	)
 }
 
