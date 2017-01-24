@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Autonomous Messages - Options</title>
+  <meta name="description" content="Options page for Autonomous Messages.">
+  <meta name="author" content="Stephano Zanzin">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <!-- <link rel="icon" type="image/png" href="images/favicon.png"> -->
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div id="status"></div>
+      <div class="one-half column" style="margin-top: 25%">
+        <h4>Autonomous Messages - Options</h4>
+
+        <p>Manage your key pair:</p>
+        <input id="generate-key-pair" class="button-primary" type="submit" value="Generate Key Pair">
+        <input id="export-public-key" class="button-primary" type="submit" value="Export Public Key">
+
+        <p></p>
+        <p>Installed public keys:</p>
+        <table class="u-full-width">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>John Doe</td>
+              <td><button id="delete-user-public-key">Delete</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="content.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
