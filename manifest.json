@@ -6,8 +6,8 @@
   "content_scripts": [
     {
       "matches": ["https://www.messenger.com/*"],
-      "js": ["jquery-3.1.1.min.js", "content.js", "utils.js", "options.js"]
+      "js": ["lib/jquery-3.1.1.min.js", "src/content.js", "src/utils.js", "src/options.js"]
     }
   ],
-  "options_page": "options.html"
+  "options_page": "src/options.html"
 }
