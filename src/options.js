@@ -29,7 +29,19 @@ function generate_key_pair() {
   });
 }
 
-function export_public_key() {}
+function export_public_key() {
+  chrome.storage.local.get("exported_public_key", function(public_key) {
+    var json_public_key = JSON.stringify(public_key, null, 4);
+    var url = "data:application/json;base64," + btoa(json_public_key);
+
+    chrome.downloads.download(
+      {
+        url: url,
+        filename: "autonomous-messages-public-key-" + generateUniqueId(10) + ".json"
+      }
+    );
+  });
+}
 
 document.getElementById('generate-key-pair').addEventListener('click', generate_key_pair);
-//document.getElementById('export-public-key').addEventListener('click', export_public_key);
+document.getElementById('export-public-key').addEventListener('click', export_public_key);
